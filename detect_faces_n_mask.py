@@ -54,15 +54,15 @@ video_writer = cv2.VideoWriter('./result_video/mask_test.avi', fcc, fps, (video_
 mask_warning_queue = Queue(100)
 
 # Time variable
-prevTime = 0
+previous_time = 0
 
 # Main Code
 while cap.isOpened():
 
     # Fps variable
-    curTime = time.time()
-    sec = curTime - prevTime
-    prevTime = curTime
+    current_time = time.time()
+    second_of_frame = current_time - previous_time
+    previous_time = current_time
 
     # Get Image
     if cap:
@@ -148,7 +148,7 @@ while cap.isOpened():
             cv2.rectangle(image, (startX, startY), (endX, endY), color, 2)
 
     # Print FPS
-    fps = 1 / (sec)
+    fps = 1 / (second_of_frame)
     fps_str = "FPS : %0.1f" % fps
     cv2.putText(image, fps_str, (0, 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
