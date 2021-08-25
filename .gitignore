@@ -4,6 +4,6 @@
 /train/
 /face_detection_model/
 /result_video/final_2x.mp4
-/3class_less_image_without_augmentation.h5
+/*.h5
 /readme_pic/VpNhuEt.jpg
 /readme_pic/
